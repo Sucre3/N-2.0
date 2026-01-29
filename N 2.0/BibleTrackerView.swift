@@ -9,31 +9,7 @@ struct BibleTrackerView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 24) {
-                Spacer()
-                NavigationLink {
-                    OptionsView(progressJSON: $progressJSON)
-                } label: {
-                    Text("Biblia")
-                        .font(.title2).bold()
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.accentColor)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                }
-                Spacer()
-            }
-            .padding()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Image(systemName: "gearshape")
-                    }
-                }
-            }
+            OptionsView(progressJSON: $progressJSON)
         }
     }
 
